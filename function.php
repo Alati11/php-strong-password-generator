@@ -4,5 +4,6 @@ function random_password( $length = 8 ) {
     $password = substr( str_shuffle( $caratteri ), 0, $length );
     return $password;
 }
-//var_dump(random_password());
+
+var_dump(random_password());
 ?>  
