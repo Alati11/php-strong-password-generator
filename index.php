@@ -2,11 +2,11 @@
 <?php
 
 include __DIR__ . '/function.php';
-
+$error  = "errore password, lunghezza minima 6 caratteri";
 // var_dump(isset($_GET['length']));
 // var_dump($_GET['length']);
 
-$valid_password = $_GET['length']; 
+$valid_password = intval($_GET['length']) ; 
 
 ?>
 
@@ -18,6 +18,14 @@ $valid_password = $_GET['length'];
     <input type="submit" value="genera"> 
 </form>
 
-<h2><?php echo random_password($valid_password) ?></h2>
+<?php
+    if ($valid_password > 6  ) {
+        echo random_password($valid_password);
+
+    }else
+
+        echo $error;
+?>
+
 
 
